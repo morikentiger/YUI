@@ -140,12 +140,14 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v){
-        // 文字列を取得
-        TextView textRecognizerr = findViewById(R.id.text_view);//edit_text);
-        String string = textRecognizerr.getText().toString();
+        // 音声認識した文字列から、String型の文字列を取得
+        TextView textRecognizer = findViewById(R.id.text_view);
+        String string = textRecognizer.getText().toString();
 
+        // 会話のパターンを条件分岐
         conditionalBranch(string);
 
+        // TTS、発話
         speechText();
     }//TTS開始？
 
