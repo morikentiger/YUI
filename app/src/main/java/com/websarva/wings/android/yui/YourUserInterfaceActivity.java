@@ -144,6 +144,12 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         TextView textRecognizerr = findViewById(R.id.text_view);//edit_text);
         String string = textRecognizerr.getText().toString();
 
+        conditionalBranch(string);
+
+        speechText();
+    }//TTS開始？
+
+    private void conditionalBranch(String string){
         if( "こんにちは".equals(string) ){
             textView.setText("こんにちは、あるじさま");
         }
@@ -153,9 +159,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         if( "こんばんは".equals(string) ){
             textView.setText("こんばんは、マスター");
         }
-
-        speechText();
-    }//TTS開始？
+    }
 
     private void shutDown(){
         if (null != tts){
