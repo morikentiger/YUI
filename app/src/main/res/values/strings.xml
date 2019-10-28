@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Y.U.I.</string>
+    <string name="hint">しゃべらせたい言葉を入力</string>
+    <string name="button_TTS">Text To Speech</string>
+
+    <string name="error">No Activity</string>
+    <string name="text">音声認識文字</string>
+    <string name="button_speech">音声を入力</string>
+
+</resources>
