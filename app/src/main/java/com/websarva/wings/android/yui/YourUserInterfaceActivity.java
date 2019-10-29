@@ -156,13 +156,16 @@ public class YourUserInterfaceActivity extends AppCompatActivity
             textView.setText("こんにちは、あるじさま");
         }
         if( "おはよう".equals(string) ){
-            textView.setText("おはようございます、ごしゅじん");
+            textView.setText("おはようございます、ご主人");
         }
         if( "こんばんは".equals(string) ){
             textView.setText("こんばんは、マスター");
         }
         if( "ごきげんよう".equals(string) ){
             textView.setText("ごきげんよう、おじょうさま");
+        }
+        if( "さようなら".equals(string) ){
+            textView.setText("さようなら、ご主人");
         }
     }
 
