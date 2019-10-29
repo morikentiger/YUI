@@ -170,6 +170,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
                 break;
         }
 
+        /*
         if( "こんにちは".equals(string) ){
             textView.setText("こんにちは、あるじさま");
         }
@@ -185,6 +186,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         if( "さようなら".equals(string) ){
             textView.setText("さようなら、ご主人");
         }
+        */
     }
 
     private void shutDown(){
