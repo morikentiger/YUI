@@ -168,6 +168,12 @@ public class YourUserInterfaceActivity extends AppCompatActivity
             case "さようなら":
                 textView.setText("さようなら、ご主人");
                 break;
+            case "さよなら":
+                textView.setText("さようなら、ご主人");
+                break;
+            case "バイバイ":
+                textView.setText("バイバイ、マスター");
+                break;
         }
 
         /*
