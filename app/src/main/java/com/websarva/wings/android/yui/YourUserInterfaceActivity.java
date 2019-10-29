@@ -152,6 +152,24 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     }//TTS開始？
 
     private void conditionalBranch(String string){
+        switch(string){
+            case "こんにちは":
+                textView.setText("こんにちは、あるじさま");
+                break;
+            case "おはよう":
+                textView.setText("おはようございます、ご主人");
+                break;
+            case "こんばんは":
+                textView.setText("こんばんは、マスター");
+                break;
+            case "ごきげんよう":
+                textView.setText("ごきげんよう、おじょうさま");
+                break;
+            case "さようなら":
+                textView.setText("さようなら、ご主人");
+                break;
+        }
+
         if( "こんにちは".equals(string) ){
             textView.setText("こんにちは、あるじさま");
         }
