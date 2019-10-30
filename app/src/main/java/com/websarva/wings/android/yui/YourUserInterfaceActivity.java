@@ -140,6 +140,10 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
   @Override
   public void onClick(View v){
+    textToSpeechByConditionalBranch();
+  }//TTS開始？
+
+  public void textToSpeechByConditionalBranch(){
     // 音声認識した文字列から、String型の文字列を取得
     TextView textRecognizer = findViewById(R.id.text_view);
     String string = textRecognizer.getText().toString();
@@ -149,7 +153,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
     // TTS、発話
     speechText();
-  }//TTS開始？
+  }
 
   private void conditionalBranch(String string){
     switch(string){
