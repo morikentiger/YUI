@@ -174,6 +174,9 @@ public class YourUserInterfaceActivity extends AppCompatActivity
       case "バイバイ":
         textView.setText("バイバイ、マスター");
         break;
+      case "ハロウィン":
+        textView.setText("トリック・オア・トリート、お菓子くれなきゃイタズラしちゃうぞ");
+        break;
     }
 
         /*
