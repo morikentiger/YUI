@@ -2,6 +2,7 @@ package com.websarva.wings.android.yui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Build;
@@ -10,6 +11,7 @@ import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -153,7 +155,6 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
     // TTS、発話
     speechText();
-    System.out.println("Hello world !");
   }
 
   private void conditionalBranch(String string){
