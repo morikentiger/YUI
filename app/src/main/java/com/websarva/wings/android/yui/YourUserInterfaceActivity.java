@@ -153,6 +153,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
     // TTS、発話
     speechText();
+    System.out.println("Hello world !");
   }
 
   private void conditionalBranch(String string){
