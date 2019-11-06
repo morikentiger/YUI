@@ -151,13 +151,13 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     String string = textRecognizer.getText().toString();
 
     // 会話のパターンを条件分岐
-    conditionalBranch(string);
+    talkPatternConditionalBranch(string);
 
     // TTS、発話
     speechText();
   }
 
-  private void conditionalBranch(String string){
+  private void talkPatternConditionalBranch(String string){
     switch(string){
       case "こんにちは":
         textView.setText("こんにちは、あるじさま");
