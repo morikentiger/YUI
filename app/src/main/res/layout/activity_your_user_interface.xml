@@ -17,6 +17,13 @@
         android:layout_height="wrap_content" />-->
 
     <Button
+        android:id="@+id/button_alarm1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:textSize="18sp"/>
+
+    <Button
         android:id="@+id/button_tts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

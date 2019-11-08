@@ -3,6 +3,8 @@ package com.websarva.wings.android.yui;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Build;
@@ -16,8 +18,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
 
@@ -44,15 +48,54 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_your_user_interface);
 
-    //  TTSインスタンス生成
+    /**
+     * Alarm
+     */
+    Button button_alarm = this.findViewById(R.id.button_alarm1);
+    String str_alarm = "Alarm Start";
+    button_alarm.setText(str_alarm);
+
+    /**
+     * TTSインスタンス生成
+     */
+
     tts = new TextToSpeech(this,this);
 
     Button ttsButton = findViewById(R.id.button_tts);
     ttsButton.setOnClickListener(this);
 
+    /**
+     * Alarm method
+     */
+    button_alarm.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        //  時間をセットする
+        Calendar calendar = Calendar.getInstance();
+        //  Calendarを使って現在の時間をミリ秒で取得
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        //  5秒後に設定
+        calendar.add(Calendar.SECOND, 5);
+
+        //  明示的なBroadCast
+        Intent intent = new Intent(YourUserInterfaceActivity.this, AlarmBroadcastReceiver.class);
+        PendingIntent pending = PendingIntent.
+                getBroadcast(getApplicationContext(), 0, intent, 0);
+
+        //  アラームをセットする
+        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+        if(am != null){
+          am.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending);
+
+          Toast.makeText(getApplicationContext(), "Set Alarm", Toast.LENGTH_SHORT).show();
+        }
+
+      }
+    });
+
 
     /**
-     * 音声認識
+     * 音声認識 method
      */
     //  言語選択 0:日本語、1:英語、2:オフライン、その他:General
     lang = 0;
