@@ -29,6 +29,13 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         implements View.OnClickListener, TextToSpeech.OnInitListener {
 
   /**
+   * Alarm
+   */
+  private AlarmManager am;
+  private PendingIntent pending;
+  private int requestCode = 1;
+
+  /**
    * TTS
    */
   private TextToSpeech tts;
@@ -54,6 +61,60 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     Button button_alarm = this.findViewById(R.id.button_alarm1);
     String str_alarm = "Alarm Start";
     button_alarm.setText(str_alarm);
+
+    Button buttonStart1 = this.findViewById(R.id.button_start);
+    buttonStart1.setOnClickListener(new View.OnClickListener(){
+      @Override
+      public void onClick(View v) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        //  10sec
+        calendar.add(Calendar.SECOND, 10);
+
+        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
+        intent.putExtra("RequestCode", requestCode);
+
+        pending = PendingIntent.getBroadcast(
+                getApplicationContext(), requestCode, intent, 0);
+
+        //  アラームをセットする
+        am = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+        if (am != null) {
+          am.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(), pending);
+
+          //  トーストで設定されたことを表示
+          Toast.makeText(getApplicationContext(), "alarm start", Toast.LENGTH_SHORT).show();
+
+          Log.d("debug", "start");
+        }
+      }
+    });
+
+    //  アラームの取り消し
+    Button buttonCancel = findViewById(R.id.button_cancel);
+    buttonCancel.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
+        PendingIntent pending = PendingIntent.getBroadcast(
+                getApplicationContext(), requestCode, intent, 0);
+
+        //  アラームを解除する
+        AlarmManager am = (AlarmManager)YourUserInterfaceActivity.this.getSystemService(ALARM_SERVICE);
+        if (am != null) {
+          am.cancel(pending);
+          Toast.makeText(getApplicationContext(), "alarm cancel", Toast.LENGTH_SHORT).show();
+          Log.d("debug","cancel");
+        }
+        else{
+          Log.d("debug", "null");
+        }
+
+      }
+    });
+
+
 
     /**
      * TTSインスタンス生成
