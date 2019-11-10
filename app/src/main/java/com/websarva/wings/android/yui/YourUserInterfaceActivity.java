@@ -62,6 +62,10 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     String str_alarm = "Alarm Start";
     button_alarm.setText(str_alarm);
 
+    /**
+     * Alarm2
+     */
+
     Button buttonStart1 = this.findViewById(R.id.button_start);
     buttonStart1.setOnClickListener(new View.OnClickListener(){
       @Override

@@ -15,7 +15,7 @@ import android.util.Log;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
-class AlarmNotification extends BroadcastReceiver {
+public class AlarmNotification extends BroadcastReceiver {
 
   @Override //  データを受信した
   public void onReceive(Context context, Intent intent) {
