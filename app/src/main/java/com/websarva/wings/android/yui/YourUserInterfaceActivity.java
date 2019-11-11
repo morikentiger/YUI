@@ -66,7 +66,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
      * Alarm2
      */
 
-    Button buttonStart1 = this.findViewById(R.id.button_start);
+    Button buttonStart1 = this.findViewById(R.id.button_start1);
     buttonStart1.setOnClickListener(new View.OnClickListener(){
       @Override
       public void onClick(View v) {
