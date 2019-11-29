@@ -21,7 +21,7 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="@string/start" />
+        android:text="@string/start"/>
 
     <Button
         android:id="@+id/button_cancel"
