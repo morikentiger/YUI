@@ -292,6 +292,9 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         textView.setText("トリック・オア・トリート、お菓子くれなきゃイタズラしちゃうぞ");
         break;
     }
+    if(string.length() > 10){
+      textView.setText("そうなんだね");
+    }
 
         /*
         if( "こんにちは".equals(string) ){
