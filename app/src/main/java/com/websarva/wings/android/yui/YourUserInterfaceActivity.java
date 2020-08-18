@@ -58,65 +58,65 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     /**
      * Alarm
      */
-    Button button_alarm = this.findViewById(R.id.button_alarm1);
-    String str_alarm = "Alarm Start";
-    button_alarm.setText(str_alarm);
+//    Button button_alarm = this.findViewById(R.id.button_alarm1);
+//    String str_alarm = "Alarm Start";
+//    button_alarm.setText(str_alarm);
 
     /**
      * Alarm2
      */
 
-    Button buttonStart1 = this.findViewById(R.id.button_start);
-    buttonStart1.setOnClickListener(new View.OnClickListener(){
-      @Override
-      public void onClick(View v) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        //  10sec
-        calendar.add(Calendar.SECOND, 10);
-
-        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
-        intent.putExtra("RequestCode", requestCode);
-
-        pending = PendingIntent.getBroadcast(
-                getApplicationContext(), requestCode, intent, 0);
-
-        //  アラームをセットする
-        am = (AlarmManager) getSystemService(ALARM_SERVICE);
-
-        if (am != null) {
-          am.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(), pending);
-
-          //  トーストで設定されたことを表示
-          Toast.makeText(getApplicationContext(), "alarm start", Toast.LENGTH_SHORT).show();
-
-          Log.d("debug", "start");
-        }
-      }
-    });
+//    Button buttonStart1 = this.findViewById(R.id.button_start);
+//    buttonStart1.setOnClickListener(new View.OnClickListener(){
+//      @Override
+//      public void onClick(View v) {
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTimeInMillis(System.currentTimeMillis());
+//        //  10sec
+//        calendar.add(Calendar.SECOND, 10);
+//
+//        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
+//        intent.putExtra("RequestCode", requestCode);
+//
+//        pending = PendingIntent.getBroadcast(
+//                getApplicationContext(), requestCode, intent, 0);
+//
+//        //  アラームをセットする
+//        am = (AlarmManager) getSystemService(ALARM_SERVICE);
+//
+//        if (am != null) {
+//          am.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(), pending);
+//
+//          //  トーストで設定されたことを表示
+//          Toast.makeText(getApplicationContext(), "alarm start", Toast.LENGTH_SHORT).show();
+//
+//          Log.d("debug", "start");
+//        }
+//      }
+//    });
 
     //  アラームの取り消し
-    Button buttonCancel = findViewById(R.id.button_cancel);
-    buttonCancel.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
-        PendingIntent pending = PendingIntent.getBroadcast(
-                getApplicationContext(), requestCode, intent, 0);
-
-        //  アラームを解除する
-        AlarmManager am = (AlarmManager)YourUserInterfaceActivity.this.getSystemService(ALARM_SERVICE);
-        if (am != null) {
-          am.cancel(pending);
-          Toast.makeText(getApplicationContext(), "alarm cancel", Toast.LENGTH_SHORT).show();
-          Log.d("debug","cancel");
-        }
-        else{
-          Log.d("debug", "null");
-        }
-
-      }
-    });
+//    Button buttonCancel = findViewById(R.id.button_cancel);
+//    buttonCancel.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View v) {
+//        Intent intent = new Intent(getApplicationContext(), AlarmNotification.class);
+//        PendingIntent pending = PendingIntent.getBroadcast(
+//                getApplicationContext(), requestCode, intent, 0);
+//
+//        //  アラームを解除する
+//        AlarmManager am = (AlarmManager)YourUserInterfaceActivity.this.getSystemService(ALARM_SERVICE);
+//        if (am != null) {
+//          am.cancel(pending);
+//          Toast.makeText(getApplicationContext(), "alarm cancel", Toast.LENGTH_SHORT).show();
+//          Log.d("debug","cancel");
+//        }
+//        else{
+//          Log.d("debug", "null");
+//        }
+//
+//      }
+//    });
 
 
 
@@ -132,31 +132,31 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     /**
      * Alarm method
      */
-    button_alarm.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        //  時間をセットする
-        Calendar calendar = Calendar.getInstance();
-        //  Calendarを使って現在の時間をミリ秒で取得
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        //  5秒後に設定
-        calendar.add(Calendar.SECOND, 5);
-
-        //  明示的なBroadCast
-        Intent intent = new Intent(YourUserInterfaceActivity.this, AlarmBroadcastReceiver.class);
-        PendingIntent pending = PendingIntent.
-                getBroadcast(getApplicationContext(), 0, intent, 0);
-
-        //  アラームをセットする
-        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
-        if(am != null){
-          am.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending);
-
-          Toast.makeText(getApplicationContext(), "Set Alarm", Toast.LENGTH_SHORT).show();
-        }
-
-      }
-    });
+//    button_alarm.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View v) {
+//        //  時間をセットする
+//        Calendar calendar = Calendar.getInstance();
+//        //  Calendarを使って現在の時間をミリ秒で取得
+//        calendar.setTimeInMillis(System.currentTimeMillis());
+//        //  5秒後に設定
+//        calendar.add(Calendar.SECOND, 5);
+//
+//        //  明示的なBroadCast
+//        Intent intent = new Intent(YourUserInterfaceActivity.this, AlarmBroadcastReceiver.class);
+//        PendingIntent pending = PendingIntent.
+//                getBroadcast(getApplicationContext(), 0, intent, 0);
+//
+//        //  アラームをセットする
+//        AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);
+//        if(am != null){
+//          am.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pending);
+//
+//          Toast.makeText(getApplicationContext(), "Set Alarm", Toast.LENGTH_SHORT).show();
+//        }
+//
+//      }
+//    });
 
 
     /**

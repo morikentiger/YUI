@@ -17,30 +17,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />-->
 
-    <Button
-        android:id="@+id/button_start1"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/start"/>
+<!--    <Button-->
+<!--        android:id="@+id/button_start1"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:text="@string/start"/>-->
 
-    <Button
-        android:id="@+id/button_cancel"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="@string/cancel"/>
+<!--    <Button-->
+<!--        android:id="@+id/button_cancel"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:text="@string/cancel"/>-->
 
-    <Button
-        android:id="@+id/button_alarm1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="50dp"
-        android:textSize="18sp"/>
+<!--    <Button-->
+<!--        android:id="@+id/button_alarm1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="50dp"-->
+<!--        android:textSize="18sp"/>-->
 
     <Button
         android:id="@+id/button_tts"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="30dp"
         android:textSize="30sp"
@@ -60,7 +60,7 @@
         android:text="@string/button_speech"
         android:layout_margin="30dp"
         android:textSize="30sp"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClick"/>
 
