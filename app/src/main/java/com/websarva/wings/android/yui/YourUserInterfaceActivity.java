@@ -293,7 +293,13 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         break;
     }
     if(string.length() > 10){
-      textView.setText("そうなんだね");
+      String[] texts = {
+              "そうなんだね",
+              "そうだよね",
+              "わかるよ",
+              "大変だったね"};
+
+      textView.setText(texts[(int) Math.floor(Math.random() * texts.length)]);
     }
 
         /*
