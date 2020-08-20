@@ -291,9 +291,14 @@ public class YourUserInterfaceActivity extends AppCompatActivity
       case "ハロウィン":
         textView.setText("トリック・オア・トリート、お菓子くれなきゃイタズラしちゃうぞ");
         break;
+      case "ありがとう":
+        textView.setText("どういたしまして！");
+        break;
+
     }
     if(string.length() > 10){
       String[] texts = {
+              string + "なんだね",
               "そうなんだね",
               "そうだよね",
               "わかるよ",
