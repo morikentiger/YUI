@@ -306,6 +306,15 @@ public class YourUserInterfaceActivity extends AppCompatActivity
 
       textView.setText(texts[(int) Math.floor(Math.random() * texts.length)]);
     }
+    if(string.contains("なんだよ")){
+      textView.setText("そうなんだね");
+    }
+    if(string.contains("ありがとう")){
+      textView.setText("どういたしまして");
+    }
+    if(string.contains("疲れ")){
+      textView.setText("お疲れさま");
+    }
 
         /*
         if( "こんにちは".equals(string) ){
