@@ -314,6 +314,9 @@ public class YourUserInterfaceActivity extends AppCompatActivity
     }
     if(string.contains("疲れ")){
       textView.setText("お疲れさま");
+      if(string.contains("大変")){
+        textView.setText("たいへんおつかれさまでした");
+      }
     }
 
         /*
