@@ -318,6 +318,30 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         textView.setText("たいへんおつかれさまでした");
       }
     }
+    if(string.contains("大変")){
+      textView.setText("大変なんだね");
+    }
+    if(string.contains("分か") || string.contains("わか")){
+      textView.setText("わかるよ");
+    }
+    if(string.contains("辛い")){
+      textView.setText("それは辛いよね");
+    }
+    if(string.contains("ヤバ") || string.contains("やば")){
+      textView.setText("それはヤバいね");
+    }
+    if(string.contains("おはよ")){
+      textView.setText("おはようございます");
+    }
+    if(string.contains("こん")){
+      if(string.contains("ちは")){
+        textView.setText("こんにちは");
+      }
+    }
+    if(string.contains("こんばん")){
+      textView.setText("こんばんは");
+    }
+
 
         /*
         if( "こんにちは".equals(string) ){
