@@ -382,7 +382,7 @@ public class YourUserInterfaceActivity extends AppCompatActivity
         return;
       }
       setSpeechRate(1.0f);
-      setSpeechPitch(3.0f);
+      setSpeechPitch(2.0f);
 
       if (Build.VERSION.SDK_INT >= 21){
         //  SDK 21  以上
